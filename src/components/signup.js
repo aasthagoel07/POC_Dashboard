@@ -101,7 +101,7 @@ function Signup() {
       </Backdrop>
       <div className="grid lg:grid-cols-12 grid-cols-4 xl:p-[50px] sm:p-[30px] p-0 mb-[19px]">
         <div className=" col-span-8 justify-center m-auto flex">
-          <img src={logo} alt="" className="h-[30%] w-[30%] m-auto"/>
+          <img src={logo} alt="" className="h-[60%] w-[60%] m-auto"/>
         </div>
         <div className=" col-span-4 bg-white flex flex-col md:p-[34px] p-6  h-auto xl:w-[430px] w-auto rounded-lg md:m-0 m-4">
           <Formik

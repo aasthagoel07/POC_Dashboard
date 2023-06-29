@@ -81,7 +81,7 @@ const notifyFailure = (value) => toast.error("Failed : " + value,{
     <>
       <div className="grid lg:grid-cols-12 grid-cols-4 xl:p-[50px] sm:p-[30px] p-0 mb-[19px] ">
         <div className=" col-span-8 justify-center m-auto flex">
-          <img src={logo} alt="" className="h-[30%] w-[30%] m-auto"/>
+          <img src={logo} alt="" className="h-[60%] w-[60%] m-auto"/>
         </div>
         <div className=" col-span-4 bg-white   flex flex-col md:p-[34px] p-6 h-auto xl:w-[430px] w-auto rounded-lg  ">
           <Formik
@@ -163,13 +163,14 @@ const notifyFailure = (value) => toast.error("Failed : " + value,{
                 <button
                   type="submit"
                   className="primeryButton w-full"
-                  style={{ marginTop: "35%" }}
+                  style={{ marginTop: "15%" }}
                 >
                   Login
                 </button>
                 {/* <button type="button" className="secondyButton w-full"> */}
                   <Link to={"/signup"} >
-                  <div className="secondyButton w-full">
+                  <div className="secondyButton w-full"
+                  style={{ marginTop: "5%" }}>
 
                     Sign Up
                     </div>
