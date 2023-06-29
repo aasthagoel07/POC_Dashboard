@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+
+.fieldcss {
+  @apply bg-[#F8F8FC] w-[100%] h-10 rounded-md focus:outline-none text-black px-4 py-1.5 focus:border-b-2 focus:border-[#0F69AF] text-base disabled:text-[#BCBCC3];
+}
+
+.textblue {
+  @apply text-[#0F69AF] active:text-[#0B4A7B] disabled:text-[#E9E9ED];
+}
+
+.primeryButton{
+  @apply bg-[#0F69AF] hover:bg-[#0E5F9E] active:bg-[#0B4A7B] disabled:bg-[#9FC3DF] rounded-md text-white px-6 py-2.5 text-center font-bold min-w-[100px]
+}
+
+.secondyButton{
+  @apply bg-[#E9E9ED] hover:bg-[#F8F8FC] active:bg-[#FFFFFF] disabled:bg-[#FCFCFE] rounded-md text-[#0F69AF] px-6 py-2.5 text-center font-bold min-w-[100px]
+}
+
+.checkbox {
+  @apply sm:w-6 sm:h-6 h-5 w-5 rounded-md accent-[#0F69AF];
+}
+
+.bgblue {
+  @apply bg-[#0F69AF] hover:bg-[#0E5F9E] active:bg-[#0B4A7B] disabled:bg-[#9FC3DF];
+}
+
+.textrequired {
+  @apply text-[#E61E50];
+}
+.focus-all:focus {
+  @apply border-b-2 border-b-[#0f69af];
+}
+.profileBorder {
+  @apply mb-8 border-4 border-[#F8F8FC] rounded-xl p-4;
+}
+
+.profileHeading {
+  @apply text-black font-black mb-5 text-2xl mt-5;
+}
+
+.profileGrid {
+  @apply grid md:grid-cols-3 grid-cols-1 gap-x-8;
+}
+
+.radio {
+  @apply h-6 w-6 mr-1.5 focus:border-none hover:border-[#0F69AF] disabled:opacity-30  border-4 border-[#DADADA] text-[#0F69AF];
+}
+.radio:checked{
+  @apply shadow-lg
+}
+
+.lablecolor {
+  @apply text-[#7D7D89];
+}
+.form-checkbox {
+  @apply rounded-md border-2 border-[#DADADA] hover:border-[#0F69AF] disabled:opacity-30 text-[#0F69AF] cursor-pointer;
+}
+.form-checkbox:focus {
+  @apply border-2 border-[#DADADA];
+}
+.form-checkbox:checked {
+  @apply border-none hover:text-[#0E5F9E];
+}
+.form-checkbox:checked {
+  @apply border-none ;
+}
+
+.react-datepicker__month {
+  @apply h-[207px];
+}
+
+.selecticons {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+.boldiconcss {
+  @apply h-5 bg-red-300;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: white;
+  color: #1b1b25;
+  text-align: center;
+  border-radius: 6px;
+  padding: 25px;
+  position: absolute;
+  z-index: 11;
+  bottom: 150%;
+  left: 0%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 28%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.textgrey {
+  @apply text-[#7D7D89];
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@tailwind utilities;
+
+
+
+@layer base {
+  body {
+    font-family: "Lato";
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Lato" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  background-color: #E9E9ED
+}
+html{
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main{
+  flex-grow: 1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.threeDotsOverlap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.threeDots2Lines {
+  -webkit-line-clamp: 2;
+}
+.threeDots3Lines {
+  -webkit-line-clamp: 3;
+}
+
+hr {
+  color: #e9e9ed;
+}
+
+ul > li {
+  @apply list-disc ml-4;
+}
+ol > li {
+  @apply list-decimal ml-4;
+}
+
+span,
+p {
+  font-family: "Lato" !important;
+}
+.fontall > span,
+.fontall > h1 > span,
+.fontall > h2 > span,
+.fontall > h3 > span,
+.fontall > h4 > span,
+.fontall > h5 > span,
+.fontall > h6 > span.fontall > p > span {
+  font-size: 16px !important;
+}
+
+
+
+canvas {
+  width: 100% !important;
+  position: static !important;
+}
+
+/* remove the original arrow */
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  -o-appearance: none !important;
+  /* no standardized syntax available, no ie-friendly solution available */
+}
+
+.selecticon {
+  position: relative !important;
+}
+.selecticon > span {
+  position: absolute !important;
+  top: 27% !important;
+  right: 17px;
+  font-weight: 600 !important;
+  pointer-events: none;
+  font-size: 19px;
+}
+/* dropdown changes */
+.MuiMenu-paper{
+  max-height: 300px !important;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected{
+  background-color: #E9E9ED !important;
+  color: #0F69AF !important;
+  font-weight: 900 !important;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+ background-color: #F8F8FC !important;
+ color: #0F69AF !important;
+ font-weight: 900 !important;
+}
+ .MuiOutlinedInput-notchedOutline {
+  border-bottom: none !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused {
+  border-bottom: #0F69AF 2px solid !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  z-index: 1 !important;
+}
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root{
+  z-index: 1 !important;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+  padding: 0 !important;
+  border-radius: 6px !important;
+}
+.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+  .css-bpeome-MuiSvgIcon-root-MuiSelect-icon{
+  display: none !important;
+}
+
+
+
+/* scroll design */
+/* ::-webkit-scrollbar {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+
+::-webkit-scrollbar-track {
+  background: transparent !important; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #0F69AF; 
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0E5F9E; 
+}  */

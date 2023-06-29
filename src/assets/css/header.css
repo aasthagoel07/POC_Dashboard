@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Source+Sans+Pro&display=swap');
+
+.header-1{
+min-height: 60px;
+
+}
+
+.font{
+
+    font-family: 'Akronim', cursive !important;
+    font-size: 30px;
+    color: #D2AC47;
+    /* font-family: 'Source Sans Pro', sans-serif !important; */
+}

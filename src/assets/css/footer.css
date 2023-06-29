@@ -1,0 +1,13 @@
+.footer {
+  background-color: #f8f8fc;
+  height: 50px;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+}
+
+.text-1 {
+  font-size: 14px;
+  color: #1b1b25;
+  font-weight: 500;
+}

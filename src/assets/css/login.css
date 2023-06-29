@@ -1,0 +1,76 @@
+.head {
+  background-color: #ffffff;
+}
+.email-1 {
+  color: #D2AC47 !important;
+  font-size: 12px !important;
+}
+.card {
+  background-color: #e9e9ed;
+  /* height: 450px !important; */
+}
+.p-text {
+  color: #e61e50;
+  font-size: 12px;
+  font-weight: 600;
+}
+.forgot {
+  color: #0f69af;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.stay {
+  color: #1b1b25;
+  font-size: 14px;
+}
+.btn-1 {
+  background-color: #0f69af !important;
+}
+.eye {
+  float: right;
+  top: 36px;
+  position: relative;
+  margin-right: 10px;
+  color: gray;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+}
+.head-1 {
+  width: 480px;
+  margin: 0 auto;
+
+  margin-top: 5%;
+}
+@media (max-width: 425px) {
+  .head-1 {
+    width: 90%;
+    margin-left: 8%;
+  }
+}
+@media (max-width: 768px) {
+  .head-1 {
+    width: 90%;
+    margin-top: 7%;
+  }
+}
+@media (max-width: 1024px) {
+  .head-1 {
+    width: 90%;
+    margin-top: 7%;
+    /* margin-left: 13%; */
+  }
+}
+.input-em {
+  outline: none;
+}
+.input-em:focus {
+  border-bottom: 2px solid #0f69af;
+}
+input[type='password']::-ms-reveal,
+input[type='password']::-ms-clear{
+  display:none;
+}
