@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import logo from "../assets/Svg/Resume.gif";
+import logo from "../assets/images/login_vector_2x.png";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { BiHide, BiShow } from "react-icons/bi";
@@ -100,8 +100,8 @@ function Signup() {
         <Loader />
       </Backdrop>
       <div className="grid lg:grid-cols-12 grid-cols-4 xl:p-[50px] sm:p-[30px] p-0 mb-[19px]">
-        <div className=" col-span-8 justify-center m-auto">
-          {/* <img src={logo} alt="" /> */}
+        <div className=" col-span-8 justify-center m-auto flex">
+          <img src={logo} alt="" className="h-[30%] w-[30%] m-auto"/>
         </div>
         <div className=" col-span-4 bg-white flex flex-col md:p-[34px] p-6  h-auto xl:w-[430px] w-auto rounded-lg md:m-0 m-4">
           <Formik
@@ -261,11 +261,14 @@ function Signup() {
                   Create Account
                 </button>
 
-                <button type="button" className="secondyButton w-full" >
-                  <Link to={"/login"} className="">
+                {/* <button type="button" className="secondyButton w-full" > */}
+                  <Link to={"/login"} >
+                    <div className="secondyButton w-full">
+
                     LOGIN
+                    </div>
                   </Link>
-                </button>
+                {/* </button> */}
               </Form>
             )}
           </Formik>
