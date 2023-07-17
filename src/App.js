@@ -10,7 +10,8 @@ import PrivateRoute from "./components/privateRoute";
 
 import UserLayout from "./layout/userLayouts/userLayout";
 import Loader from "./components/loader";
-
+import DashboardAps from "./components/dashboardComponent/dashboardAps";
+import SummaryPage from "./components/dashboardComponent/summaryPage/summaryPage";
 
 const Login = React.lazy(() => import("./components/login"));
 // const Password = React.lazy(() => import("./password"));
@@ -24,10 +25,13 @@ const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Navigate replace to="/login" />} />
-            <Route path={`/login`} element={<Login/>} />
-            <Route path={`/signup`} element={<SignUp/>} />
-            <Route path={`/dashboard`} element={<Dashboard/>} />
-          {/* <PrivateRoute path={`/Details`} component={Login} />
+            <Route path={`/login`} element={<Login />} />
+            <Route path={`/signup`} element={<SignUp />} />
+            <Route path={`/dashboard`} element={<Dashboard />}>
+              <Route index element={<DashboardAps />} />
+              <Route  path="summary" element={<SummaryPage />} />
+            </Route>
+            {/* <PrivateRoute path={`/Details`} component={Login} />
 
           <PrivateRoute path={`/home`} component={Login} />
           <PrivateRoute path={`/payment`} component={Login} /> */}

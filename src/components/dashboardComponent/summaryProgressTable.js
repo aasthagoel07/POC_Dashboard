@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import Typography from "@mui/material/Typography";
+import moment from "moment";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 
-function UploadFileTable({ files }) {
+function SummaryProgressTable({ files }) {
   const statuscode = [
     {
       id: 0,
@@ -24,12 +24,12 @@ function UploadFileTable({ files }) {
     },
   ];
   // const [data, setdata] = useState(files)
-  const [filterFileName, setFilterFileName] = useState("");
+  const [filterDueDate, setfilterDueDate] = useState("");
   const [filterUploadedBy, setFilterUploadedBy] = useState("");
   const [filterStatus, setFilterStatus] = useState();
 
-  const handleFilterFileNameChange = (e) => {
-    setFilterFileName(e.target.value);
+  const handlefilterDueDateChange = (e) => {
+    setfilterDueDate(e.target.value);
   };
 
   const handleFilterUploadedByChange = (e) => {
@@ -47,7 +47,7 @@ function UploadFileTable({ files }) {
   const filteredFiles = files.reduce((filtered, file) => {
     console.log(filterStatus);
     if (
-      (filterFileName && file.filename !== filterFileName) ||
+      (filterDueDate && file.duedate !== filterDueDate) ||
       (filterUploadedBy && file.uploadedBy !== filterUploadedBy) ||
       (filterStatus && file.status !== filterStatus)
     ) {
@@ -56,14 +56,11 @@ function UploadFileTable({ files }) {
 
     return [...filtered, file];
   }, []);
-
   return (
-    <div className="p-[18px] bg-[#FBFAFA] mt-2.5">
+    <div className="p-[18px] bg-[#F9F7F7] mt-2.5">
       <div className=" w-full">
         <div className="flex justify-between">
-          <label className="text-[#060606] font-bold">
-            Upload Files Status
-          </label>
+          <label className="text-[#060606] font-bold">Upload Files Status</label>
           <div className="flex gap-2 w-1/2">
             <select
               name="uploadedBy"
@@ -81,12 +78,14 @@ function UploadFileTable({ files }) {
               name="fileName"
               id="fileName"
               className="bg-white px-3.5 py-0.5 rounded-2xl form-select w-full"
-              value={filterFileName}
-              onChange={handleFilterFileNameChange}
+              value={filterDueDate}
+              onChange={handlefilterDueDateChange}
             >
-              <option value="">File Name</option>
+              <option value="">Due Date</option>
               {files?.map((item) => (
-                <option value={item?.filename}>{item?.filename}</option>
+                <option value={item.duedate}>
+                  {moment(item?.duedate).format("MMM DD, YYYY")}
+                </option>
               ))}
             </select>
             <select
@@ -110,10 +109,11 @@ function UploadFileTable({ files }) {
         </div>
 
         <table className="w-full my-6 text-sm">
-          <thead className="">
+          <thead className=" ">
             <tr>
               <th className="pb-2.5 text-start">File Name</th>
               <th className="pb-2.5 text-center">Uploaded by</th>
+              <th className="pb-2.5 text-center">Due Date</th>
               <th className="pb-2.5 text-center">Status</th>
               <th className="pb-2.5 text-end">Progress</th>
             </tr>
@@ -122,15 +122,19 @@ function UploadFileTable({ files }) {
             {filteredFiles.map((file, index) => (
               <tr key={index}>
                 <td className="text-start">
-                  <Link to={"./summary"}>{file.filename}</Link>
+                  <Link to={"./summary"}> {file.filename}</Link>
                 </td>
                 <td className="text-center">{file.uploadedBy}</td>
+                <td className="text-center">
+                  {moment(file?.duedate).format("MMM DD, YYYY")}
+                </td>
+
                 <td className={`text-center flex justify-center `}>
                   <div
-                    className={`flex justify-center items-center m-1 font-medium py-1 px-2  text-white rounded-full w-fit  opac`}
+                    className={`flex justify-center items-center m-1 font-medium py-1 px-2  text-white rounded-full w-fit  `}
                     style={{ backgroundColor: file.statusColor }}
                   >
-                    <div className="text-xs font-normal leading-none  flex-initial ">
+                    <div className="text-xs font-normal leading-none  flex-initial opacity-100">
                       {
                         statuscode?.filter(
                           (code) => code?.id === file?.status
@@ -177,4 +181,4 @@ function UploadFileTable({ files }) {
   );
 }
 
-export default UploadFileTable;
+export default SummaryProgressTable;
