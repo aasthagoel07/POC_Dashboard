@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import moment from "moment";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
+import  Pagination  from "../pagination/pagination";
+import usePagination from "headless-pagination-react";
 
 function SummaryProgressTable({ files }) {
   const statuscode = [
@@ -27,6 +29,29 @@ function SummaryProgressTable({ files }) {
   const [filterDueDate, setfilterDueDate] = useState("");
   const [filterUploadedBy, setFilterUploadedBy] = useState("");
   const [filterStatus, setFilterStatus] = useState();
+  const [totalItems, setTotalItems] = useState(1000);
+  const [maxLinks, setMaxLinks] = useState(5);
+  const [perPage, setperPage] = useState(5);
+
+  const {
+    links,
+    from,
+    to,
+    setPage,
+    onNext,
+    onPrevious,
+  } = usePagination({
+    totalItems,
+    perPage,
+    maxLinks,
+  });
+  useEffect(() => {
+ 
+    setTotalItems(files?.length || 0)
+    setPage(1)
+
+   
+  }, [])
 
   const handlefilterDueDateChange = (e) => {
     setfilterDueDate(e.target.value);
@@ -119,7 +144,7 @@ function SummaryProgressTable({ files }) {
             </tr>
           </thead>
           <tbody>
-            {filteredFiles.map((file, index) => (
+            {filteredFiles?.slice(from - 1, to).map((file, index) => (
               <tr key={index}>
                 <td className="text-start">
                   <Link to={"./summary"}> {file.filename}</Link>
@@ -176,6 +201,20 @@ function SummaryProgressTable({ files }) {
             ))}
           </tbody>
         </table>
+        <div className=" mt-5 ">
+          <Pagination
+            onNext={onNext}
+            setPage={setPage}
+            links={links}
+            setperPage={setperPage}
+            perPage={perPage}
+            from={from}
+            to={to}
+            totalItems={totalItems}
+            onPrevious={onPrevious}
+          />
+          
+          </div>
       </div>
     </div>
   );
