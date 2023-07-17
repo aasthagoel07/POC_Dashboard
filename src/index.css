@@ -70,12 +70,12 @@
   @apply h-[207px];
 }
 
-.selecticons {
+/* .selecticons {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: "";
-}
+} */
 .boldiconcss {
   @apply h-5 bg-red-300;
 }
@@ -213,12 +213,12 @@ canvas {
 }
 
 /* remove the original arrow */
-select {
+/* select {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   -o-appearance: none !important;
-  /* no standardized syntax available, no ie-friendly solution available */
-}
+   no standardized syntax available, no ie-friendly solution available 
+} */
 
 .selecticon {
   position: relative !important;
