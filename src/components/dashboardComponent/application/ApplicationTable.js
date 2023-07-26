@@ -119,7 +119,7 @@ function ApplicationTable({ files, uploadFileHandler }) {
           </thead>
           <tbody>
             {filteredFiles?.slice(from - 1, to).map((file, index) => (
-              <tr key={index} className="h-10 cursor-pointer" onClick={()=>uploadFileHandler(file.id)}>
+              <tr key={index} className="h-10 cursor-pointer hover:font-bold" onClick={()=>uploadFileHandler(file.id)}>
                 <td className="text-start" >
                   {file.applicationName}
                 </td>

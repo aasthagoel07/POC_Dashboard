@@ -148,7 +148,7 @@ function UploadFileTable({ files }) {
           </thead>
           <tbody>
             {filteredFiles?.slice(from - 1, to).map((file, index) => (
-              <tr key={index}>
+              <tr key={index} className="hover:font-bold h-10">
                 <td className="text-start">
                   <Link to={"./summary"}>{file.filename}</Link>
                 </td>
