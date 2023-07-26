@@ -86,8 +86,8 @@ function UploadFileTable({ files }) {
   }, []);
 
   return (
-    <div className="p-[18px] bg-[#FBFAFA] mt-2.5">
-      <div className=" w-full">
+    <div className="p-[18px] bg-[#FBFAFA] mt-2.5 ">
+      <div className="lg:w-3/4 w-full ">
         <div className="flex justify-between">
           <label className="text-[#060606] font-bold">
             Upload Files Status
@@ -139,7 +139,7 @@ function UploadFileTable({ files }) {
 
         <table className="w-full my-6 text-sm">
           <thead className="">
-            <tr>
+            <tr className="border-b-2 border-b-[#E1DFDF]">
               <th className="pb-2.5 text-start">File Name</th>
               <th className="pb-2.5 text-center">Uploaded by</th>
               <th className="pb-2.5 text-center">Status</th>
@@ -200,6 +200,7 @@ function UploadFileTable({ files }) {
             ))}
           </tbody>
         </table>
+        {files?.length> 5 &&
         <div className=" mt-5 ">
           <Pagination
             onNext={onNext}
@@ -213,6 +214,7 @@ function UploadFileTable({ files }) {
             onPrevious={onPrevious}
           />
         </div>
+}
       </div>
     </div>
   );

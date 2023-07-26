@@ -135,7 +135,7 @@ function SummaryProgressTable({ files }) {
 
         <table className="w-full my-6 text-sm">
           <thead className=" ">
-            <tr>
+            <tr className="border-b-2 border-b-[#E1DFDF]">
               <th className="pb-2.5 text-start">File Name</th>
               <th className="pb-2.5 text-center">Uploaded by</th>
               <th className="pb-2.5 text-center">Due Date</th>

@@ -64,7 +64,7 @@ function UploadFile({ setFiles, files }) {
     <div className="flex w-1/2 gap-2.5">
       <label
         htmlFor="file-upload"
-        className={`rounded-2xl flex  w-full  ${
+        className={`rounded-2xl flex  w-full form-input  ${
           isDragOver ? "bg-green-300" : "bg-white"
         }`}
         onDragEnter={handleDragEnter}
@@ -91,7 +91,7 @@ function UploadFile({ setFiles, files }) {
         className=" rounded-2xl bg-white px-[7px] py-[5px] flex"
       >
         {" "}
-        <span className="flex gap-2.5 whitespace-nowrap">
+        <span className="flex gap-2.5 whitespace-nowrap m-auto">
           <IoMdAdd className="h-6 w-6 bg-[#E65F2B] text-white p-[5px] rounded-full" />
           Upload File
         </span>

@@ -6,7 +6,6 @@ import UploadFileTable from "./uploadFileTable";
 function UploadFileComponent({data}) {
   
   const [files, setFiles] = useState(data)
-  console.log(files)
   return (
     <div>
       <div className="p-[18px] bg-[#F9F7F7] rounded-xl">

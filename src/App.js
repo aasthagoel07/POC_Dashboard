@@ -6,12 +6,11 @@ import {
   Routes,
 } from "react-router-dom";
 import "./App.css";
-import PrivateRoute from "./components/privateRoute";
 
 import UserLayout from "./layout/userLayouts/userLayout";
 import Loader from "./components/loader";
 import DashboardAps from "./components/dashboardComponent/dashboardAps";
-import SummaryPage from "./components/dashboardComponent/summaryPage/summaryPage";
+import SummaryPage from "./components/summaryPage/summaryPage";
 
 const Login = React.lazy(() => import("./components/login"));
 // const Password = React.lazy(() => import("./password"));
