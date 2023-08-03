@@ -1,0 +1,42 @@
+
+/* new */
+.css-1hb7zxy-IndicatorsContainer{
+    display: none !important;
+}
+.css-13cymwt-control{
+    height: 44px !important;
+    border: none !important;
+    border-radius: 55px !important;
+    padding: 0 12px !important;
+}
+.css-t3ipsp-control:hover{
+    height: 44px !important;
+    border: none !important;
+    border-color: none;
+    border-radius: 55px !important;
+    padding: 0 12px !important;
+}
+.css-t3ipsp-control{
+    height: 44px !important;
+    border: none !important;
+    border-color: none !important;
+    border-radius: 55px !important;
+    box-shadow: none !important;
+    padding: 0 12px !important;
+}
+.css-1jqq78o-placeholder{
+    justify-self: center !important;
+    font-size: 14px !important;
+    color: #9CACCB !important;
+}
+.css-1p3m7a8-multiValue{
+    /* background-color: #ebe9e9 !important; */
+    border-radius: 55px !important;
+    padding: 0 5px !important;
+}
+.css-1dimb5e-singleValue{
+    margin: auto !important;
+}
+.css-3w2yfm-ValueContainer{
+    justify-content: center !important;
+}

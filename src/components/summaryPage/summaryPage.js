@@ -110,7 +110,7 @@ function SummaryPage() {
   return (
     <div className="h-full">
       <div className="top-head-title">
-        <label className="main-title font-bold">Summary</label>{" "}
+        <label className="main-title ">Summary</label>{" "}
         <div>
           <select
             name="days"

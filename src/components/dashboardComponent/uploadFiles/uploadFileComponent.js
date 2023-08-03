@@ -10,7 +10,7 @@ function UploadFileComponent({data}) {
     <div>
       <div className="p-[18px] bg-[#F9F7F7] rounded-xl">
         <div className="flex justify-between">
-          <label className="main-title font-bold">Upload File</label>
+          <label className="main-title ">Upload File</label>
           <UploadFile setFiles={setFiles} files={files}/>
         </div>
           <UploadFileTable files={files}/>

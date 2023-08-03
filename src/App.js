@@ -12,10 +12,12 @@ import Loader from "./components/loader";
 import DashboardAps from "./components/dashboardComponent/dashboardAps";
 import SummaryPage from "./components/summaryPage/summaryPage";
 
+
 const Login = React.lazy(() => import("./components/login"));
 // const Password = React.lazy(() => import("./password"));
 
 const SignUp = React.lazy(() => import("./components/signup"));
+const MembersForm = React.lazy(() => import("./components/MembersForm/membersForm"));
 const Dashboard = React.lazy(() => import("./components/dashboard"));
 const App = () => {
   return (
@@ -26,6 +28,7 @@ const App = () => {
             <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path={`/login`} element={<Login />} />
             <Route path={`/signup`} element={<SignUp />} />
+            <Route path={`/membersForm`} element={<MembersForm />} />
             <Route path={`/dashboard`} element={<Dashboard />}>
               <Route index element={<DashboardAps />} />
               <Route  path="summary" element={<SummaryPage />} />

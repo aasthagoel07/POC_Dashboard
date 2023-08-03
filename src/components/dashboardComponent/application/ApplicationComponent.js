@@ -20,7 +20,7 @@ function ApplicationComponent({ files, uploadFileHandler }) {
     <div>
       <div className="p-[18px] bg-[#F9F7F7] rounded-xl">
         <div className="flex justify-between">
-          <label className="main-title font-bold">Applications</label>
+          <label className="main-title ">Applications</label>
           <div className="flex w-1/2 gap-2.5 ">
             <input
               type="text"
