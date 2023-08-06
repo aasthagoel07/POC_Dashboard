@@ -8,7 +8,7 @@ import Benificiary from "./Benificiary";
 import MedicalInfo from "./medicalInfo";
 import DetailsForm from "./detailsForm";
 import { IoMdAdd } from "react-icons/io";
-import { BsFillCheckCircleFill, BsFillCircleFill } from "react-icons/bs";
+import { BsFillCheckCircleFill, BsFillCircleFill, BsXLg } from "react-icons/bs";
 const medicalHistory = [
   {
     id: 1,
@@ -231,6 +231,65 @@ function MembersForm() {
   });
   const onSubmit = (values) => {
     console.log(values);
+const finalvalue = { firstName: "",
+lastName: values.lastName,
+middleName: values.middleName,
+ssn: values.ssn,
+militaryService: values.militaryService,
+militaryStatus: values.militaryStatus,
+consent: values.consent,
+personsInsured: values.personsInsured.map((item, index)=> 
+ ( {
+    RelationshipToMember: item.RelationshipToMember,
+    lastName: item.lastName,
+    firstName: item.firstName,
+    SSN: item.SSN,
+    Birthdate: item.Birthdate,
+    Gender: item.Gender,
+    ContactInfo: item.ContactInfo,
+    Phone: item.Phone,
+    Email: item.Email,
+    Address: item.Address,
+    Street: item.Street,
+    city: item.city,
+    zip: item.zip,
+    insuranceCoverage: [values.insuranceCoverage[index]].map((ite, idx)=> ({
+      TermLife: ite.TermLife,
+      LevelTerm1: ite.LevelTerm1,
+      LevelTerm2: ite.LevelTerm2,
+      FiveYearRenewableTerm: ite.FiveYearRenewableTerm,
+      ValueAddedWholeLife: ite.ValueAddedWholeLife,
+      PaytoAge100: ite.PaytoAge100,
+      PayforXXyears: ite.PayforXXyears,
+      SinglePayment: ite.SinglePayment,
+      InsuranceAmount: ite.InsuranceAmount,
+      MonthlyPremium: ite.MonthlyPremium,
+    })),
+    benificiary: [values.benificiary[index]].map((ite, idx)=> ({
+      Primary: ite.Primary,
+      lastName: ite.lastName,
+      firstName: ite.firstName,
+      RelationtoInsured: ite.RelationtoInsured,
+      SSN: ite.SSN,
+      DOB: ite.DOB,
+    })),
+    medicalInfo: [values.medicalInfo[index]].map((ite, idx)=>({
+      height: ite.height,
+      weigth: ite.weigth,
+      LastPhysicalExam: ite.LastPhysicalExam,
+      prescribedMedication: item.prescribedMedication,
+      MedicalHistory: ite.MedicalHistory,
+    })),
+    details: [values.details[index]].map((ite, idx)=> ({
+      PrintedName: ite.PrintedName,
+      Signature: ite.Signature,
+      Date: ite.Date,
+    }))
+  })),
+}
+
+console.log("first", finalvalue)
+
   };
   return (
     <div className="p-[30px]">
